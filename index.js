@@ -6,8 +6,12 @@ require("dotenv/config");
 const port = process.env.PORT || 3000;
 connectDB();
 
+
 app.use(express.json());
 app.get("/", (req, res) => {
   res.json("Welcome to the Videos Streaming API");
 });
+app.use("/users", userRouter);
 app.listen(port, () => console.log(`[SERVER] is running on :${port}`));
+
+
